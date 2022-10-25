@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9f9890b616.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
+    <title>Web UI</title>
+
+    <style>
+        /* * {
+            box-sizing: border-box;
+        } */
+        body {
+            margin: 0;
+            width: 716px;
+            margin-left: 28%;
+            font-family: Helvetica, sans-serif;
+        }
+
+        .mainCode div.stnav ul {
+            list-style-type: none;
+            padding: 10px;
+            overflow: hidden;
+            background-color: white;
+            margin: 0%;
+        }
+
+        .mainCode div.stnav li button{
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px;
+            width: 50px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline;
+            /* font-size: 16px; */
+            margin: 0px 2px 2px 70px;
+            cursor: pointer;
+        } 
+
+        .mainCode div.stnav li select {
+            margin: 0px;
+            width: 162px;
+            /* padding: 5px; */
+            /* background-color: #4CAF50; */
+            border-radius: 5px;
+            font-size: 15px;
+            border: 1px solid white;
+            border: none;
+            text-align: center;
+            display: inline;
+            cursor: pointer;
+            color: rgb(74, 0, 247);
+            font-weight: 400;
+            /* height: 20px; */
+        }
+        .dropdown *{
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 3px;
+
+        }
+
+        .mainCode div.stnav li .optgrpright{
+            width: 78px;
+        }
+
+        .mainCode div.stnav li span{
+            font-size: 14px;
+            font-weight: 100;
+            color: grey;
+        }
+
+        .mainCode div.stnav li {
+            float: left;
+        }
+
+        /* .mainCode div.stnav li a {
+            display: inline;
+            color: rgb(4, 217, 255);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;} */
+        
+
+        .mainCode div.stnav li select:focus {
+            outline: none;
+        }
+
+        .mainCode .active {
+            color: #195fe2;
+        }
+
+        .mainCode .row {
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.2);
+            margin: 0px;
+            padding: 0px 10px;
+        }
+
+        .mainCode .column {
+            flex: 50%;
+            /* padding: 10px; */
+            /* height: 300px; */
+        }
+
+        .mainCode .column-right {
+            float: right;
+        }
+
+        .mainCode .name{
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .mainCode .number, .email, .address{
+            font-size: small;
+        }
+
+        .mainCode .column-right .stage select{
+            margin: 0px;
+            width: 95px;
+            padding: 3px;
+            /* background-color: #4CAF50; */
+            border-radius: 5px;
+            font-size: 12px;
+            border: 1px solid rgb(74, 0, 247);
+            /* border: none; */
+            text-align: center;
+            display: inline;
+            cursor: pointer;
+            color: rgb(79, 4, 255);
+            font-weight: 400;
+            /* height: 20px; */
+        }
+
+        .mainCode .column-right .stage select:focus{
+            outline: none;
+        }
+
+        .mainCode .column-right .stage{
+            font-size: 13px;
+        }
+
+        .mainCode .column-right .created{
+            font-size: 13px;
+            margin-left: 19px;
+        }
+
+        .mainCode .column-right .steps{
+            font-size: 13px;
+            margin: 20px 10px 20px 75px;
+        }
+
+        .mainCode div.navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .mainCode div.navbar li {
+            float: left;
+        }
+
+        .mainCode div.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 42px;
+            text-decoration: none;
+        }
+
+        .mainCode div.navbar li a:hover {
+            background-color: #111;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid rgb(74, 0, 247);
+            background-color:rgb(74, 0, 247);
+            /* margin: 40px; */
+        }
+
+        .mainCode .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin: 0 10px;
+            padding: 14px 28px;
+            /* transition: 0.3s; */
+            font-size: 17px;
+            color: whitesmoke;
+            font-weight: lighter;
+        }
+
+        .mainCode .tab button:hover {
+            /* background-color: #ddd; */
+            border-bottom: 2px solid rgb(245, 248, 248);
+            background-color: rgb(74, 0, 247);
+            color: white;
+            /* font-weight: 550; */
+            font-size: large;
+        }
+
+        .mainCode .tab button.active {
+            border-bottom: 2px solid rgb(245, 248, 248);
+            background-color: rgb(74, 0, 247);
+            color: white;
+        }
+
+        .mainCode .tabcontent {
+            display: none;
+            padding: 30px 12px;
+            margin-top: 30px;
+            color: whitesmoke;
+            border: 1px none #ccc;  
+            /* border-top: none; */
+        }
+
+        .information, .document, .comment, .note{
+            margin-top: 20px;
+        }
+        .information table {
+            /* font-family: arial, sans-serif; */
+            /* border-collapse: collapse; */
+            font-weight: 500;
+            font-size: large;
+        }
+
+        .information td {
+            /* border: 1px solid #dddddd; */
+            text-align: left;
+            padding: 3px;
+        }
+
+        /* tr:nth-child(even) {
+            background-color: #dddddd;
+        } */
+        .information p {
+            line-height: 0.2pc;
+            font-weight: 100;
+            font-size: medium;
+            color: lightgray;
+        }
+        
+        .information .fitable td{
+            width: 235px;
+            margin: 0;
+        }
+        
+        .information .setable td {
+            width: 22%;
+        }
+
+        .information .fitable td select{
+            margin: 0px;
+            width: 185px;
+            /* padding: 5px; */
+            /* background-color: #4CAF50; */
+            border-radius: 5px;
+            font-size: large;
+            border: 1px solid white;
+            border: none;
+            text-align: center;
+            display: inline;
+            cursor: pointer;
+            color: rgb(74, 0, 247);
+            font-weight: 400;
+            /* height: 20px; */
+        }
+
+        .information .fitable td select:focus{
+            outline: none;
+        }
+
+        .information .thitable td {
+            padding-right: 66px;
+        }
+
+        .information .foutable td {
+            padding-right: 32px;
+        }
+
+        .document table p {
+            line-height: 0.2pc;
+            font-weight: 100;
+            font-size: small;
+            color: lightgray;
+        }
+
+        .document table {
+            font-family: arial, sans-serif;
+            /* border-collapse: collapse; */
+
+        }
+
+        .document td,
+        th {
+            /* border: 1px solid #dddddd; */
+            text-align: left;
+            padding: 8px;
+            width: 20%;
+        }
+
+        .document .btn {
+            /* background-color: DodgerBlue; */
+            border: none;
+            border-radius: 3px;
+            color: white;
+            padding: 5px 8px;
+            margin-right: 2px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        /* Darker background on mouse-over */
+        /* .btn:hover {
+            background-color: RoyalBlue;
+        } */
+
+        .document .trash {
+            background-color: rgb(218, 23, 23);
+        }
+
+        .document .trash:hover {
+            background-color: rgb(110, 6, 6);
+        }
+
+        .document .check {
+            background-color: rgb(17, 136, 17);
+        }
+
+        .document .check:hover {
+            background-color: rgb(5, 54, 5);
+        }
+
+        .document .eye {
+            background-color: rgb(18, 121, 206);
+        }
+
+        .document .eye:hover {
+            background-color: rgb(5, 56, 71);
+        }
+
+        /* input {
+            width: 200px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0px;
+            /* resize: vertical;} */
+        /* button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline;
+            font-size: 16px;
+            margin: 0px;
+            cursor: pointer;
+        } */
+        .document form {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid grey;
+            padding: 0px;
+            border-radius: 3px;
+            width: 350px;
+        }
+
+        .document .form {
+            margin-left: 5px;
+            margin-bottom: 18px;
+        }
+
+        .document select {
+            flex-grow: 2;
+            border: none;
+            padding: 5px;
+            /* border: 1px solid #ccc; */
+            border-radius: 4px;
+            margin: 0px;
+            color: gray;
+        }
+
+        .document option {
+            padding: 4px;
+            margin: 10px;
+        }
+
+        .document select:focus {
+            outline: none;
+        }
+
+        option:first {
+            color: rgb(138, 138, 138);
+        }
+
+        .document .form button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline;
+            font-size: 16px;
+            margin: 0px;
+            cursor: pointer;
+        }
+
+        .row1 {
+            display: flex;
+            margin: 0%;
+            /* padding: 0px 10px; */
+        }
+
+        .column1 {
+            flex: 50%;
+            margin: 0px 0px 0px 0px;
+            border: 2px solid rgba(128, 128, 128, 0.2);
+            border-radius: 5px;
+            padding: 5px 5px 0 5px;
+            /* height: 300px; */
+        }
+
+        .document .left,
+        .document .right {
+            display: flex;
+            margin: 5px;
+        }
+
+        .document .lefty1 {
+            flex: 50%;
+        }
+
+        .document .righty2 {
+            float: right;
+            margin-left: 68px;
+        }
+
+        .document .bton {
+            /* background-color: DodgerBlue; */
+            border: none;
+            border-radius: 3px;
+            color: white;
+            padding: 5px 8px;
+            margin-right: 1px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .document .det {
+            line-height: 0pc;
+            font-weight: 100;
+            font-size: small;
+            color: lightgray;
+        }
+
+        .document .certi {
+            font-size: 20px;
+            margin: 0px 25px 0px 0px;
+            padding: 2px;
+            width: 200px;
+            /* font-weight: 550; */
+        }
+
+        .comment .mainContainer {
+            width: 700px;
+            /* margin-left: 28%; */
+            position: absolute;
+            bottom: 20px;
+        }
+
+        /* 
+    .container{
+        display: block;
+    } */
+
+        .comment .time-right {
+            float: right;
+            color: #aaa;
+            font-size: small;
+            /* margin: 0px;
+            padding: 0px; */
+            line-height: 0.2px;
+        }
+
+        .comment .time-left {
+            float: left;
+            color: #999;
+            color: #aaa;
+            font-size: small;
+            line-height: 0.2px;
+        }
+
+        .comment .container .message {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 10px 0px 10px 10px;
+            padding: 10px;
+            margin-top: 0;
+            /* line-height: 00.2pc; */
+            /* float: right; */
+            max-width: 400px;
+            /* display: inline-block; */
+        }
+
+        .comment .container .msright {
+            border-radius: 0px 10px 10px 10px;
+            background-color: rgba(255, 68, 0, 0.1);
+            max-width: 200px;
+            border-color: rgba(255, 68, 0, 0.2);
+        }
+
+        .comment .rmCircle {
+            width: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+            text-align: center;
+            font-size: 15px;
+            border: none;
+            background-color: rgb(194, 182, 10);
+            border: 3px none rgba(255, 68, 0, 0.6);
+        }
+
+        .note .mainContainer {
+            width: 700px;
+            /* margin-left: 28%; */
+            position: absolute;
+            bottom: 20px;
+        }
+
+        .note .container .message {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 10px 0px 10px 10px;
+            padding: 10px;
+            margin-top: 0;
+            /* line-height: 00.2pc; */
+            /* float: right; */
+            max-width: 400px;
+            /* display: inline-block; */
+        }
+
+        .note .container .msright {
+            border-radius: 0px 10px 10px 10px;
+            background-color: rgba(255, 68, 0, 0.1);
+            max-width: 450px;
+            font-size: 13px;
+            border-color: rgba(255, 68, 0, 0.2);
+        }
+
+        .note .rmCircle {
+            width: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+            text-align: center;
+            font-size: 15px;
+            border: none;
+            background-color: rgb(194, 182, 10);
+            border: 3px none rgba(255, 68, 0, 0.6);
+        }
+
+        .note .time-left {
+            float: left;
+            color: #999;
+            color: #aaa;
+            font-size: small;
+            line-height: 0.2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainCode">
+        <div class="stnav">
+            <ul>
+                <li>
+                    <span>Assigned :</span>
+                    <select class="dropdown">
+                        <option selected>Regional Manager</option>
+                        <option>Regional Manager 1</option>
+                        <option>Regional Manager 2</option>
+                        <option>Regional Manager 3</option>
+                    </select>
+                </li>
+                <li style="float:right"><button>Edit</button><span style="font-size:20px; cursor:pointer">&times;</span></li>
+                <li style="float:right"><span>Managed By :</span><select class="optgrpright">
+                    <option selected>Agent</option>
+                    <option>Agent 1</option>
+                    <option>Agent 2</option>
+                    <option>Agent 3</option>
+                </select></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p class="name"><i class='fa-solid fa-user' style='font-size:18px;color: rgb(74, 0, 247);'></i> Charlize Theron</p>
+                <span class="number">  <i class="fas fa-phone" style='font-size:17px;color: rgb(74, 0, 247);'></i>  &plus;44 987 654 3210 &nbsp; &nbsp;</span>
+                <span class="email"><i class='far fa-envelope' style='font-size:17px;color: rgb(74, 0, 247);'></i> charlizetheron@gmail.com</span>
+                <p class="address"><i class='fas fa-map-marker-alt' style='font-size:17px;color: rgb(74, 0, 247);'></i> 40 acre Ln, London SW2 5SP, United Kingdom</p>
+            </div>
+            <div class="column-right" style="float: Right;">
+                <p class="stage">Stage : <select>
+                    <option selected>RECEIVED</option>
+                    <option>RUNNING</option>
+                    <option>WAITING</option>
+                    <option>READY</option>
+                </select></p>
+                <p class="steps">Steps :<span  style="font-size: 15px; font-weight:550"> 3/4</span></p>
+                <p class="created">Created By : <span style="font-size: 15px; font-weight:550">Admin</span></p>
+            </div>
+        </div>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Information')" id="defaultOpen">Information</button>
+            <button class="tablinks" onclick="openTab(event, 'Document')">Document</button>
+            <button class="tablinks" onclick="openTab(event, 'Comment')">Comment</button>
+            <button class="tablinks" onclick="openTab(event, 'Note')">Note</button>
+            <button class="tablinks" onclick="openTab(event, 'Offer')">Offer</button>
+        </div>
+    </div>
+    <div class="information tabcontent" id="Information">
+        <table>
+            <table class="fitable">
+                <tr>
+                    <td><select>
+                        <option selected>Intake - Jan 2023/24</option>
+                        <option>Intake -Aug 2023/24</option>
+                        <option>Intake -Jan 2024/25</option>
+                        <option>Intake -Aug 2024/25</option>
+                    </select>
+                        <p>Applied For</p>
+                    </td>
+                    <td>Business & Finance<p>Course</p>
+                    </td>
+                    <td>London Campus UFP<p>Study Location</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>02/20/2002<p>Date of birth</p>
+                    </td>
+                    <td>United Kingdom<p>Country of residence</p>
+                    </td>
+                    <td>British<p>Nationality</p>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table class="setable">
+                <tr>
+                    <td>Jason Smith<p>Parent/Guardian</p>
+                    </td>
+                    <td>jsmith@gmail.com<p>Parent/Guardian email</p>
+                    </td>
+                    <td>&plus;44 987 654 3210<p>Parent/Guardian Phone</p>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table class="thitable">
+                <tr>
+                    <td>Higher Secondary<p>School Qualification</p>
+                    </td>
+                    <td>Government Higher Secondary School<p>Secondary School</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2019<p>School Completion On</p>
+                    </td>
+                    <td>Parent/Guardian<p>Fees Sponsor</p>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table class="foutable">
+                <tr>
+                    <td>Yes<p>Medical Condition</p>
+                    </td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.<p>Details</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Yes<p>Previous/Current UK Visas</p>
+                    </td>
+                    <td>Tourist Visa<p>Visa Type</p>
+                    </td>
+                </tr>
+            </table>
+        </table>
+    </div>
+    <div class="document container tabcontent" id="Document">
+        <table>
+            <tr>
+                <th>Scan-all Docs.pdf <p>Qualification Documents</p>
+                    <button class="btn check"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button class="btn trash"><i class="fa fa-trash"></i></button>
+                    <button class="btn eye"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                </th>
+                <th>Scan Passport.PDF <p>Passport</p>
+                    <button class="btn eye"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                </th>
+                <th>London Campus UFP<p>IELTS Certificate</p>
+                    <button class="btn eye"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                </th>
+            </tr>
+        </table>
+        <hr>
+        <div class="form">
+            <p>Additional Documents : </p>
+            <form>
+                <label for="text"></label>
+                <select class="seldoc" name="selectDocument" id="selectDocuments">
+                    <option value="" disabled selected hidden>Select Documents</option>
+                    <option value="Clearance Certificate">Clearance Certificate</option>
+                    <option value="Migration Certificate">Migration Certificate</option>
+                </select>
+                <button type="submit">submit</button>
+            </form>
+        </div>
+        <div class="row1">
+            <div class="column1 left">
+                <div class="lefty1">
+                    <p class="certi">ClearanceCerti.PDF</p>
+                    <p class="det">Clearance Certificate</p>
+                </div>
+                <div class="lefty1 righty1">
+                    <button class="bton check"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button class="bton trash"><i class="fa fa-trash"></i></button>
+                    <button class="bton eye"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="column1 right">
+                <div class="lefty1">
+                    <p class="certi">MigrationCerti.PDF</p>
+                    <p class="det">Migration Certificate</p>
+                </div>
+                <div class="lefty1 righty1 righty2">
+                    <button class="bton eye"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comment tabcontent" id="Comment">
+        <div class="mainContainer">
+            <div class="container" style="float: right;">
+                <p class="message">Mr.Manager, Please provide an update on this application</p>
+                <div>
+                    <span class="time-right">11:00 | Today</span>
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <div class="container">
+                <p class="rmCircle">RM</p>
+                <p class="message msright">Sure will update it asap</p>
+                <div>
+                    <span class="time-left">11:01 | Today</span>
+                </div>
+            </div>
+
+            <div class="container" style="float: right;">
+                <p class="message">Thanks so much</p>
+                <div>
+                    <span class="time-right">11:02 | Today</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="note tabcontent" id="Note">
+        <div class="mainContainer">
+            <div class="container">
+                <p class="rmCircle">RM</p>
+                <p class="message msright">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident
+                    voluptatem neque assumenda accusamus sapiente ipsa nostrum expedita eveniet natus!</p>
+                <div>
+                    <span class="time-left">10:00 | Yesterday</span>
+                </div>
+            </div><br>
+            <div class="container">
+                <p class="rmCircle">AG</p>
+                <p class="message msright">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tempore
+                    dicta
+                    iste eum, temporibus aliquid ipsa corrupti pariatur expedita aliquam?</p>
+                <div>
+                    <span class="time-left">10:30 | Today</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+
+</html>

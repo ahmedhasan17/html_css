@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+            background: url(https://i.postimg.cc/tJnXHLKP/brick-wall-white-background-hd-white-background-2560x1440.jpg) no-repeat center fixed;
+            background-size: cover;
+        }
+
+        section {
+            margin: 0;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 10%);
+            background-color: white;
+            border: 1px none black;
+            border-radius: 20px;
+            width: 80%;
+            height: 85%;
+            display: flex;
+            box-shadow: 0px 0px 5px grey;
+        }
+
+       
+        
+        div.left {
+            float: left;
+            width: 50%;
+            text-align: center;
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+        
+        
+        div.right {
+            float: right;
+            background: url(https://i.postimg.cc/Qtt8fBSf/red.jpg) no-repeat center ;
+            background-color: rgb(243, 77, 17,0.6) !important;
+            background-size: cover;
+            background-clip: border-box;
+            border-radius: 0 10px 10px 0;
+            width: 50%;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 200px;
+            color: white;
+            font-size: 13px;
+            padding-left: 50px;
+            padding-right: 50px;
+          
+        }
+        /* div.right{ */
+            /* z-index: 1; */
+        /* } */
+ 
+
+        img.left-img {
+            width: 150px;
+            height: 80px;
+           
+        }
+
+
+
+        img.right-img {
+            width: 150px;
+            height: 80px;
+            z-index: 1;
+        }
+
+        input[type="username"],
+        input[type="password"] {
+            width: 70%;
+            padding: 12px 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: none;
+            border: 1px solid rgb(187, 173, 173);
+            border-radius: 300px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 70%;
+            background-color: #f35d07;
+            color: white;
+            font-weight: 900;
+            padding: 14px 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 300px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover{
+            background-color: #9e4009;
+        }
+        input:focus{
+            border: none;
+        }
+
+
+        .header {
+            font-size: small;
+            font-weight: 100;
+            color: grey;
+        }
+
+        .article {
+            font-size: smaller;
+            color: grey;
+        }
+
+        .aside {
+            color: grey;
+        }
+
+        a:link {
+            /* color: rgb(8, 8, 8); */
+            text-decoration: none;
+            font-weight: 200;
+        }
+        a:hover {
+            color: #9e4009;
+        }
+
+
+        .hr-text {
+            line-height: 1em;
+            position: relative;
+            outline: 0;
+            border: 0;
+            color: black;
+            text-align: center;
+            height: 1.5em;
+            opacity: .5;
+        }
+
+        .hr-text:before {
+            content: '';
+            background: linear-gradient(to right, transparent, #818078, transparent);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+        }
+
+        .hr-text:after {
+            content: attr(data-content);
+            position: relative;
+            display: inline-block;
+            color: black;
+            padding: 0 .5em;
+            line-height: 1.5em;
+            color: #818078;
+            background-color: #fcfcfa;
+        }
+
+        .fa {
+            padding: 15px;
+            font-size: 20px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 100%;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-google {
+            background: #dd4b39;
+            color: white;
+        }
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="left">
+            <p class="header">WELCOME TO</p>
+            <img class="left-img" src="https://i.postimg.cc/rpqFtZ4X/pinpng-com-infinity-png-32419.png" alt="Infinity">
+            <p class="article">log in to get in the moment updates the things that interests you</p>
+            <form>
+                <input type="username" name="username" id="username" placeholder="Username"><br>
+                <input type="password" name="pwd" id="pwd" placeholder="Password"><br>
+                <input type="submit" value="Sign In"><br>
+            </form>
+            <p class="aside"><code>Don't have an Account ?</code> <a href="#Sign Up Now">Sign Up Now</a></p>
+            <hr class="hr-text" data-content="OR">
+            <p class="article">Continue with our social media</p>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+        </div>
+        <div class="right">
+
+            <img class="right-img" src="https://i.postimg.cc/rpqFtZ4X/pinpng-com-infinity-png-32419.png" alt="infinity">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor animi expedita minus nisi officiis
+                tempore
+                sit aliquam. Amet quasi accusantium quia non nostrum! Incidunt delectus dolores et illum impedit.
+                Esse
+                dolore eaque animi eos ut harum assumenda quaerat nihil accusantium.</p>
+
+        </div>
+    </section>
+</body>
+
+</html>

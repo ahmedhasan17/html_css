@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url(/brick_wall_white_background_hd_white_background-2560x1440.jpg) no-repeat center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        div.head{
+            columns: 5 200px;
+            column-gap: 20px;
+            max-width: 98%;
+        }
+
+        div{
+            display: inline-block;
+            width: 100%;
+            padding: 8px;
+            /* border-radius: 5px; */
+            /* display: flex;
+            flex-wrap: wrap;
+            float: left;
+            flex-flow: row wrap;
+            padding: 5px;
+            max-width: 20%;
+            max-height: 100%;
+            flex: 25%; */
+        }
+
+        div.body {
+            border: 2px none black;
+            margin: 5px;
+            background-color: white;
+            padding: 3px;
+            box-shadow: 0 0 10px black;
+            vertical-align: top;
+        }
+
+        div.body img {
+            width: 100%;
+            /* height: auto; */
+            margin-top: 5px;
+            /* border-radius: 5px; */
+        }
+
+        div.description {
+            text-align: left;
+            padding: 5px;
+        }
+        address{
+            text-align: right;
+        }
+
+        @media screen and (max-width: 800px) {
+            .body {
+                max-width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/L5Szpw2h/1.jpg">
+                    <img src="https://i.postimg.cc/L5Szpw2h/1.jpg" alt="Trees" width="100%">
+            </a>
+                <div class="description">Trees<hr>
+                    <address>~1</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/CKvtdCzF/2.jpg">
+                    <img src="https://i.postimg.cc/CKvtdCzF/2.jpg" alt="Boat" width="100%">
+                </a>
+                <div class="description">Boat<hr>
+                    <address>~2</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/B6Kgs2F7/3.jpg">
+                    <img src="https://i.postimg.cc/B6Kgs2F7/3.jpg" alt="Rainbow" width="100%">
+                </a>
+                <div class="description">Rainbow<hr>
+                    <address>~3</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/wMNbWSFv/4.jpg">
+                    <img src="https://i.postimg.cc/wMNbWSFv/4.jpg" alt="pink Trees" width="100%">
+                </a>
+                <div class="description"> Pink Trees<hr>
+                    <address>~4</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/44HMN9Zg/5.jpg">
+                    <img src="https://i.postimg.cc/44HMN9Zg/5.jpg" alt="Mountain" width="100%">
+                </a>
+                <div class="description">Mountain<hr>
+                    <address>~5</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/xCcZmkzL/6.jpg">
+                    <img src="https://i.postimg.cc/xCcZmkzL/6.jpg" alt="skies" width="100%">
+                </a>
+                <div class="description">skies<hr>
+                    <address>~6</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/mDJ5ybYJ/7.jpg">
+                    <img src="https://i.postimg.cc/mDJ5ybYJ/7.jpg" alt="Waterfall" width="100%">
+                </a>
+                <div class="description">Waterfall<hr>
+                    <address>~7</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/66ZjNxL6/8.jpg">
+                    <img src="https://i.postimg.cc/66ZjNxL6/8.jpg" alt="Pond" width="100%">
+                </a>
+                <div class="description">Pond<hr>
+                    <address>~8</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/28wxzkqY/9.jpg">
+                    <img src="https://i.postimg.cc/28wxzkqY/9.jpg" alt="Mountain River" width="100%">
+                </a>
+                <div class="description">Mountain River<hr>
+                    <address>~9</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/J4b2jCGY/10.jpg">
+                    <img src="https://i.postimg.cc/J4b2jCGY/10.jpg" alt="House" width="100%">
+                </a>
+                <div class="description">House<hr>
+                    <address>~10</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/XN98zc4p/11.jpg">
+                    <img src="https://i.postimg.cc/XN98zc4p/11.jpg" alt="Branches" width="100%">
+                </a>
+                <div class="description">Branches<hr>
+                    <address>~11</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/rwwNsBWr/12.jpg">
+                    <img src="https://i.postimg.cc/rwwNsBWr/12.jpg" alt="Sunset" width="100%">
+                </a>
+                <div class="description">Sunset<hr>
+                    <address>~12</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/CxrHqcH6/13.jpg">
+                    <img src="https://i.postimg.cc/CxrHqcH6/13.jpg" alt="Forest" width="100%">
+                </a>
+                <div class="description">Forest<hr>
+                    <address>~13</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/Kj7D3FJn/14.jpg">
+                    <img src="https://i.postimg.cc/Kj7D3FJn/14.jpg" alt="River" width="100%">
+                </a>
+                <div class="description">River<hr>
+                    <address>~14</address>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="body">
+                <a target="_blank" href="https://i.postimg.cc/R0j7PqY7/15.jpg">
+                    <img src="https://i.postimg.cc/R0j7PqY7/15.jpg" alt="Flowers" width="100%">
+                </a>
+                <div class="description">Flowers<hr>
+                    <address>~15 </address>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
